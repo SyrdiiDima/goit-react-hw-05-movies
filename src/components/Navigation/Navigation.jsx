@@ -8,14 +8,18 @@ const Navigation = () => {
         exact
         to="/"
         className={css.link}
-        activeClassName={css.activeLink}
+        className={({ isActive }) =>
+          `${css.link}` + (isActive ? ` ${css.activeLink}` : '')
+        }
       >
         Home
       </NavLink>
       <NavLink
         to="/movies"
         className={css.link}
-        activeClassName={css.activeLink}
+        className={({ isActive }) =>
+          `${css.link}` + (isActive ? ` ${css.activeLink}` : '')
+        }
       >
         Movies
       </NavLink>
