@@ -5,9 +5,9 @@ const Navigation = () => {
   return (
     <nav>
       <NavLink
-        exact
+     
         to="/"
-        className={css.link}
+        // className={css.link}
         className={({ isActive }) =>
           `${css.link}` + (isActive ? ` ${css.activeLink}` : '')
         }
@@ -16,7 +16,7 @@ const Navigation = () => {
       </NavLink>
       <NavLink
         to="/movies"
-        className={css.link}
+        // className={css.link}
         className={({ isActive }) =>
           `${css.link}` + (isActive ? ` ${css.activeLink}` : '')
         }
