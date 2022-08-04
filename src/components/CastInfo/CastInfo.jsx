@@ -23,12 +23,12 @@ const CastInfo = ({ casts }) => {
 
 export default CastInfo;
 
-CastInfo.propTypes = {
+CastInfo.propTypes = {  
   casts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      profile_path: PropTypes.string.isRequired,
+      profile_path: PropTypes.string,
       character: PropTypes.string.isRequired,
     })
   ),

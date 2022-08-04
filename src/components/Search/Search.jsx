@@ -20,8 +20,8 @@ const Search = ({onSubmit}) => {
         <form onSubmit = {onSubmitFormChange}>
 
             <input
-                type='text'
-                name='search'
+                type="text"
+                name="search"
                 value={search}
                 autoComplete='off'
                 onChange = {onInputChange}

@@ -5,7 +5,7 @@ const Navigation = () => {
   return (
     <nav>
       <NavLink
-     
+       
         to="/"
         // className={css.link}
         className={({ isActive }) =>

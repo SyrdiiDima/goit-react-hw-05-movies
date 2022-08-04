@@ -1,6 +1,4 @@
-import React from "react";
-
-const Container = ({ children }) => {
+const Container = ({children}) => {
     return <div>
         {children}
     </div>

@@ -26,8 +26,8 @@ export default ReviewsInfo;
 ReviewsInfo.propTypes = {
   reviews: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string,
       content: PropTypes.string.isRequired,
     })
   ),

@@ -1,17 +1,23 @@
+
+
 import { useState } from 'react';
 // import { LinkList } from 'components/LinkList/LinkList';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet,useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import CastReviewsLink from 'components/CastReviewsLink/CastReviewsLink';
+
 
 export const MovieDetails = ({ movie }) => {
   const location = useLocation();
-  const [pathBack] = useState(location.state?.from ?? '/');
+  const [backPath] = useState(location.state?.from ?? '/');
 
-  const { title, genres, overview, popularity, poster_path } = movie;
+  const { title, poster_path, popularity, overview, genres } = movie;
   const url = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
     <>
-      <NavLink to={pathBack}>Go back</NavLink>
+    {/* <h1>Detail info for movie</h1> */}
+      <NavLink to={backPath}>Go back</NavLink>
       <div>
         <img src={url} alt={title} />
         <h1>{title}</h1>
@@ -21,28 +27,22 @@ export const MovieDetails = ({ movie }) => {
         <h3>Genres</h3>
         <p>{genres}</p>
       </div>
-
+      <hr />
       <h3>Aditional information</h3>
-
-      <li>
-        <NavLink to={`cast`}>Cast</NavLink>
-      </li>
-      <li>
-        <NavLink to={`reviews`}>Reviews</NavLink>
-      </li>
-      {/* { <Outlet /> } */}
+      <CastReviewsLink />
+      <Outlet /> 
     </>
   );
 };
 
 MovieDetails.propTypes = {
-  movie: PropTypes.objectOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      popularity: PropTypes.number.isRequired,
-      overview: PropTypes.string.isRequired,
-      genres: PropTypes.string.isRequired,
-      poster_path: PropTypes.string.isRequired,
+   movie: PropTypes.shape({
+    
+      title: PropTypes.string,
+      popularity: PropTypes.number,
+      overview: PropTypes.string,
+      genres: PropTypes.string,
+      poster_path: PropTypes.string,
     })
-  ),
-};
+  
+}
