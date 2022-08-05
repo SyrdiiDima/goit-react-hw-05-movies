@@ -1,39 +1,38 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+// import s from './Searchbar.module.css';
 
+export const Searchbar = ({ onSubmit }) => {
+  const [search, setSearch] = useState('');
 
+  const onChangeInput = event => {
+    setSearch(event.currentTarget.value);
+  };
 
-export const Search = ({onSubmit}) => {
-    const [search, setSearch] = useState('')
-    
+  const onSubmintForm = e => {
+    e.preventDefault();
+    onSubmit(search);
+  };
 
-    const onInputChange = event => {
-        setSearch(event.currentTarget.value)
-   
-    }
+  return (
+    <form onSubmit={onSubmintForm}>
+      <button type="submit">
+        <span>Search</span>
+      </button>
 
-    const onSubmitForm = event => {
-        event.preventDefault();
-        onSubmit(search)
-    }
-    return (
-        <form onSubmit = {onSubmitForm}>
+      <input
+        type="text"
+        name="search"
+        value={search}
+        autoComplete="off"
+        autoFocus
+        placeholder="Search images and photos"
+        onChange={onChangeInput}
+      />
+    </form>
+  );
+};
 
-            <input
-                type="text"
-                name="search"
-                value={search}
-                autoComplete='off'
-                onChange = {onInputChange}
-            />
-
-            <button type='submit'>Search</button>
-        </form>
-    )
-}
- 
-
-
-Search.propTypes = {
-    onSubmit:PropTypes.func.isRequired
-}
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

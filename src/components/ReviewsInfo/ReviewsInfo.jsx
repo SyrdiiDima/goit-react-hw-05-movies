@@ -1,6 +1,41 @@
+// import PropTypes from 'prop-types';
+
+// export const ReviewsInfo = ({reviews}) => {
+//   return (
+//     <div>
+//       {reviews.length > 0 ? (
+//         <ul>
+//           {reviews.map(item => {
+//             return (
+//               <li key={item.id}>
+//                 <h3>Auuthor {item.author}</h3>
+//                 <p>{item.content}</p>
+//               </li>
+//             );
+//           })}
+//         </ul>
+//       ) : (
+//         <p>Sorry we don't have any information about this</p>
+//       )}
+//     </div>
+//   );
+// };
+
+
+
+// ReviewsInfo.propTypes = {
+//   reviews: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//       author: PropTypes.string,
+//       content: PropTypes.string.isRequired,
+//     })
+//   ),
+// };
+
 import PropTypes from 'prop-types';
 
-export const ReviewsInfo = ({reviews}) => {
+export const ReviewsList = ({ reviews }) => {
   return (
     <div>
       {reviews.length > 0 ? (
@@ -8,26 +43,24 @@ export const ReviewsInfo = ({reviews}) => {
           {reviews.map(item => {
             return (
               <li key={item.id}>
-                <h3>Auuthor {item.author}</h3>
+                <h2>Author: {item.author}</h2>
                 <p>{item.content}</p>
               </li>
             );
           })}
         </ul>
       ) : (
-        <p>Sorry we don't have any information about this</p>
+        <p>Sorry, there are no reviews</p>
       )}
     </div>
   );
 };
 
-
-
-ReviewsInfo.propTypes = {
+ReviewsList.propTypes = {
   reviews: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      author: PropTypes.string,
+      author: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
     })
   ),

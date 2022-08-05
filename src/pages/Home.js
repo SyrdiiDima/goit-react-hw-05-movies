@@ -1,13 +1,23 @@
-import { useEffect, useState } from 'react';
-import { fetchMovieTrends } from 'services/fetch-api';
-import { ListMovies } from 'components/ListMovies/ListMovies';
+// import { useEffect, useState } from 'react';
+// import { fetchMovieTrends } from 'services/fetch-api';
+// import { ListMovies } from 'components/ListMovies/ListMovies';
 
+// export const Home = () => {
+//   const [trend, setTrend] = useState([]);
+
+//   useEffect(() => {
+//     fetchMovieTrends().then(setTrend);
+//   }, []);
+
+//   return <ListMovies movies={trend} />;
+// };
+import { useState, useEffect } from 'react';
+import { fetchTrend } from 'services/fetch-api';
+import { MoviesList } from 'components/ListMovies/ListMovies';
 export const Home = () => {
   const [trend, setTrend] = useState([]);
-
   useEffect(() => {
-    fetchMovieTrends().then(setTrend);
+    fetchTrend().then(setTrend);
   }, []);
-
-  return <ListMovies movies={trend} />;
+  return <MoviesList movies={trend} />;
 };
