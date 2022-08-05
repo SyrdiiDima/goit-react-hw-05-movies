@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/fetch-api';
 import { ListMovies } from 'components/ListMovies/ListMovies';
-import Search from 'components/Search/Search';
+import { Search } from 'components/Search/Search';
+
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';

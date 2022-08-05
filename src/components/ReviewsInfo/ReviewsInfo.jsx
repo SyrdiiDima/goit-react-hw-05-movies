@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const ReviewsInfo = ({reviews}) => {
+export const ReviewsInfo = ({reviews}) => {
   return (
     <div>
       {reviews.length > 0 ? (
@@ -8,7 +8,7 @@ const ReviewsInfo = ({reviews}) => {
           {reviews.map(item => {
             return (
               <li key={item.id}>
-                <h3>Auutor {item.name}</h3>
+                <h3>Auuthor {item.author}</h3>
                 <p>{item.content}</p>
               </li>
             );
@@ -21,13 +21,13 @@ const ReviewsInfo = ({reviews}) => {
   );
 };
 
-export default ReviewsInfo;
+
 
 ReviewsInfo.propTypes = {
   reviews: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      name: PropTypes.string,
+      author: PropTypes.string,
       content: PropTypes.string.isRequired,
     })
   ),

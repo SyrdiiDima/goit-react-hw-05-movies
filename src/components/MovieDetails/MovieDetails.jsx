@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import CastReviewsLink from 'components/CastReviewsLink/CastReviewsLink';
 
 
-export const MovieDetails = ({ movie }) => {
+ const MovieDetails = ({ movie }) => {
   const location = useLocation();
   const [backPath] = useState(location.state?.from ?? '/');
 
@@ -34,6 +34,9 @@ export const MovieDetails = ({ movie }) => {
     </>
   );
 };
+
+
+export default MovieDetails;
 
 MovieDetails.propTypes = {
    movie: PropTypes.shape({

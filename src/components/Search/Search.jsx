@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 
 
-const Search = ({onSubmit}) => {
-    const [search, setSearch] = useState(null)
+export const Search = ({onSubmit}) => {
+    const [search, setSearch] = useState('')
     
 
     const onInputChange = event => {
@@ -12,12 +12,12 @@ const Search = ({onSubmit}) => {
    
     }
 
-    const onSubmitFormChange = event => {
+    const onSubmitForm = event => {
         event.preventDefault();
         onSubmit(search)
     }
     return (
-        <form onSubmit = {onSubmitFormChange}>
+        <form onSubmit = {onSubmitForm}>
 
             <input
                 type="text"
@@ -32,7 +32,7 @@ const Search = ({onSubmit}) => {
     )
 }
  
-export default Search;
+
 
 Search.propTypes = {
     onSubmit:PropTypes.func.isRequired

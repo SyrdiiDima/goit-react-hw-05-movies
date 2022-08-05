@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const CastInfo = ({ casts }) => {
+export const CastInfo = ({ casts }) => {
   return (
     <ul>
       {casts.map(item => {
@@ -21,7 +21,7 @@ const CastInfo = ({ casts }) => {
   );
 };
 
-export default CastInfo;
+
 
 CastInfo.propTypes = {  
   casts: PropTypes.arrayOf(
