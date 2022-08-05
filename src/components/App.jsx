@@ -74,18 +74,15 @@
 
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import { Container } from './Container/Conteiner';
-// import { Navigation } from './Navigation/Navigation';
-// import { Home } from 'pages/Home';
 import { Container } from './Container/Container';
 import {Navigation} from './Navigation/Navigation';
 import { Home } from 'pages/Home';
+// import Movies from '../pages/Movies';
+// import MovieInfo from '../pages/MovieInfo';
+// import Cast from '../pages/Cast';
+// import Reviews from '../pages/Reviews';
+// import NotFound from '../pages/NotFound';
 
-// const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
-// const Movies = lazy(() => import('../pages/Movies'));
-// const Movie = lazy(() => import('../pages/Movie'));
-// const Cast = lazy(() => import('../pages/Cast'));
-// const Reviews = lazy(() => import('../pages/Reviews'));
 
 const NotFound = lazy(() => import('../pages/NotFound'))
 const MovieInfo = lazy (()=> import('../pages/MovieInfo'))
