@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import css from './MovieDetails.module.css'
+import { HiChevronDoubleLeft } from "react-icons/hi";
+
 
 export const MovieDetails = ({ movie }) => {
   const location = useLocation();
@@ -13,23 +16,28 @@ export const MovieDetails = ({ movie }) => {
   const url = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
     <>
-      <NavLink to={pathBack}>Go back</NavLink>
-      <div>
-        <img src={url} alt={title} />
-        <h1>{title}</h1>
-        <p>User state: {popularity}</p>
+      <NavLink to={pathBack} className={css.go_back}>
+        <HiChevronDoubleLeft size={15}/>Go back 
+      </NavLink>
+      <div className={css.info_block}>
+        <img src={url} alt={title} className={css.image} />
+        
+        <div>
+        <h1 className={css.title}>{title}</h1>
+        <p className={css.user_score}>User score: {popularity}</p>
         <h2>Overview</h2>
         <p>{overview}</p>
         <h3>Genres</h3>
         <p>{genres}</p>
-      </div>
+        </div>
+        </div>
       <hr />
-      <h3>Aditional information</h3>
-      <li key={1}>
-          <NavLink to={'cast'}>Cast</NavLink>
+      <h3 className={css.add_info}>Aditional information</h3>
+      <li key={1} className={css.liItem}>
+          <NavLink to={'cast'} className={css.cast_item} >Cast</NavLink>
         </li>
-        <li key={2}>
-          <NavLink to={'reviews'}>Reviews</NavLink>
+        <li key={2} className={css.liItem}>
+          <NavLink to={'reviews'} className={css.cast_item}>Reviews</NavLink>
         </li>
       <Outlet />
     </>

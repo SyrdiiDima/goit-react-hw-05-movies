@@ -1,22 +1,28 @@
 
 
 import PropTypes from 'prop-types';
-
+import css from './CastInfo.module.css'
 export const CastInfo = ({ casts }) => {
   return (
     <ul>
       {casts.map(item => {
         const url = `https://image.tmdb.org/t/p/w200${item.profile_path}`;
         return (
-          <li key={item.id}>
-            <h2>{item.name}</h2>
+        
+          <li key={item.id} className={css.item}>
             {item.profile_path ? (
-              <img src={url} alt={item.name} />
+                <img src={url} alt={item.name} className={css.image}/>
             ) : (
               <p>{item.name}</p>
             )}
+
+            <h2 >{item.name}</h2>
+            
             <p>Character: {item.character}</p>
-          </li>
+            <hr />
+            </li>
+          
+          
         );
       })}
     </ul>

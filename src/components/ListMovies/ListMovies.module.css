@@ -1,0 +1,14 @@
+.movie_item {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.movie_item:visited {
+  color: rgb(0, 0, 0);
+}
+.movie_item:hover {
+  color: #d41b1b;
+}
+.movie_item:link {
+  color: black;
+}

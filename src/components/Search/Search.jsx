@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import css from './Search.module.css'
 export const Search = ({ onSubmit }) => {
   const [search, setSearch] = useState('');
 
@@ -15,7 +15,8 @@ export const Search = ({ onSubmit }) => {
 
   return (
     <form onSubmit={onFormSubmin}>
-      <input
+          <input
+    className={css.input}
         type="text"
         name="search"
         value={search}
@@ -23,7 +24,7 @@ export const Search = ({ onSubmit }) => {
        
         onChange={onInputChange}
           />
-          <button type="submit">
+          <button type="submit" className={css.button}> 
         Search
       </button>
 

@@ -1,0 +1,51 @@
+.cast_item {
+  margin-left: 20px;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+.cast_item:link {
+  color: rgb(0, 0, 0);
+}
+.liItem {
+  list-style: none;
+  margin-left: 25px;
+}
+.cast_item:visited,
+.go_back {
+  color: rgb(0, 0, 0);
+}
+.cast_item:hover {
+  color: #d41b1b;
+}
+.go_back:hover {
+  color: #d41b1b;
+}
+.go_back {
+  text-decoration: none;
+  border: 1px solid white;
+  outline: none;
+  text-align: center;
+  font-size: 18px;
+}
+.add_info {
+  margin-left: 40px;
+}
+.image {
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-right: 40px;
+  width: 250px;
+}
+.info_block {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.user_score {
+  margin-bottom: 30px;
+}
