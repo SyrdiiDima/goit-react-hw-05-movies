@@ -9,5 +9,5 @@ const Home = () => {
   }, []);
   return <ListMovies movies={trend} />;
 };
-
+//
 export default Home;
