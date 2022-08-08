@@ -8,13 +8,13 @@ export const Search = ({ onSubmit }) => {
     setSearch(event.currentTarget.value);
   };
 
-  const onFormSubmin = e => {
+  const onFormSubmit = e => {
     e.preventDefault();
     onSubmit(search);
   };
 
   return (
-    <form onSubmit={onFormSubmin}>
+    <form onSubmit={onFormSubmit}>
           <input
     className={css.input}
         type="text"
